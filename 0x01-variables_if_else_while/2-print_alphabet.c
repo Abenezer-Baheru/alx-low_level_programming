@@ -11,8 +11,10 @@ char alphabet;
 
 for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
 {
-putchar('\n');
+putchar(alphabet);
 }
+
+putchar('\n')
 
 return (0);
 }
