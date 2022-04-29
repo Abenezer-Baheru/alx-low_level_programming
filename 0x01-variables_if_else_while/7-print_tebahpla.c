@@ -3,13 +3,13 @@
 /**
  * main-Entry point
  *
- * Return: 0 Always Success(Correct)
+ * Return:0 Always Correct
  */
 int main(void)
 {
 char alphabet;
 
-for (alphabet = 'a'; alphabet <= 'z'; alphabet++)
+for (alphabet = 'z' ; alphabet >= 'a'; alphabet--)
 {
 putchar(alphabet);
 }
