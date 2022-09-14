@@ -1,20 +1,23 @@
 #!/usr/bin/python3
-""" Island Perimeter """
+"""
+Module for island_perimeter() method
+"""
 
 
 def island_perimeter(grid):
-    """ Island Perimeter """
-    peri = 0
-    gl = []
-    for i in range(len(grid)):
-        for j in range(len(grid[i])):
-            gl.append(grid[i][j])
-    for i in range(len(gl)):
-        if i < len(gl) - 1 and i > 0:
-            if gl[i] == 0 and gl[i + 1] == 1 or gl[i] == 0 and gl[i - 1] == 1:
-                peri += 1
-    if peri % 2 == 0:
-        peri *= 2
-    else:
-        peri = (peri * 2) - 1
-    return peri
+    """
+    Computers the length of the perimeter of an island.
+    """
+    ret = 0
+    for y, row in enumerate(grid):
+        for x, cell in enumerate(row):
+            if cell == 1:
+                if y == 0 or grid[y - 1][x] == 0:
+                    ret += 1
+                if y == len(grid) - 1 or grid[y + 1][x] == 0:
+                    ret += 1
+                if x == 0 or grid[y][x - 1] == 0:
+                    ret += 1
+                if x == len(row) - 1 or grid[y][x + 1] == 0:
+                    ret += 1
+    return ret
